@@ -1,0 +1,33 @@
+<%= form_for(@cadastro_trabalho) do |f| %>
+  <% if @cadastro_trabalho.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cadastro_trabalho.errors.count, "error") %> prohibited this cadastro_trabalho from being saved:</h2>
+
+      <ul>
+      <% @cadastro_trabalho.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :titulo %><br>
+    <%= f.text_field :titulo %>
+  </div>
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br>
+    <%= f.date_select :data %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo %><br>
+    <%= f.text_field :arquivo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

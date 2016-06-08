@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Lista Cadastro de Trabalhos</h1>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Nome</th>
+      <th>Data</th>
+      <th>Arquivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody align="center">
+    <% @cadastro_trabalhos.each do |cadastro_trabalho| %>
+      <tr>
+        <td><%= cadastro_trabalho.titulo %></td>
+        <td><%= cadastro_trabalho.nome %></td>
+        <td><%= cadastro_trabalho.data %></td>
+        <td><%= cadastro_trabalho.arquivo %></td>
+        <td><%= link_to 'Visualizar', cadastro_trabalho %></td>
+        <td><%= link_to 'Editar', edit_cadastro_trabalho_path(cadastro_trabalho) %></td>
+        <td><%= link_to 'Deletar', cadastro_trabalho, method: :delete, data: { confirm: 'Deseja deletar arquivo?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Cadastrar novo trabalho', new_cadastro_trabalho_path %>

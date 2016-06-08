@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @cadastro_trabalho.titulo %>
+</p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @cadastro_trabalho.nome %>
+</p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @cadastro_trabalho.data %>
+</p>
+
+<p>
+  <strong>Arquivo:</strong>
+  <%= @cadastro_trabalho.arquivo %>
+</p>
+
+<%= link_to 'Edit', edit_cadastro_trabalho_path(@cadastro_trabalho) %> |
+<%= link_to 'Back', cadastro_trabalhos_path %>
